@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".module.fragment.TabCategorizeFirstFragment">
+
+    <com.idougong.jyj.widget.Relativelayout_status_bar
+        android:id="@+id/rel_title"
+        android:layout_width="match_parent"
+        android:background="@mipmap/hom_title"
+        android:layout_height="40dip">
+        <View
+            android:id="@+id/v_status"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            ></View>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/v_status"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:id="@+id/rel_search_shopping"
+                android:layout_width="0dip"
+                android:layout_height="30dip"
+                android:layout_marginLeft="15dip"
+                android:layout_weight="1"
+                android:background="@drawable/bg_shape_ellipse_gray">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawableLeft="@mipmap/search_shopping"
+                    android:drawablePadding="10dip"
+                    android:text="@string/tv33"
+                    android:textColor="@color/tabwd"
+                    android:textSize="@dimen/text_16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel_home_message"
+                android:layout_width="60dip"
+                android:layout_height="30dip"
+                android:layout_marginRight="5dip">
+
+                <ImageView
+                    android:id="@+id/iv_groupinfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/home_message" />
+
+                <TextView
+                    android:id="@+id/tv_message_number"
+                    android:layout_width="15dip"
+                    android:layout_height="15dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="14dip"
+                    android:layout_marginTop="3dip"
+                    android:background="@drawable/bg_shape_ellipse_red"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_10sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </com.idougong.jyj.widget.Relativelayout_status_bar>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dip" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

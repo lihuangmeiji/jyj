@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dip"
+    android:layout_height="wrap_content"
+    android:padding="10dip"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.idougong.jyj.widget.RoundImageView
+        android:id="@+id/iv_pb_ico"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/shoppingmr" />
+
+    <TextView
+        android:id="@+id/tv_pb_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_14sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dip"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_pb_discounted_prices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color37"
+            android:textSize="@dimen/text_16sp" />
+
+        <TextView
+            android:id="@+id/tv_pb_original_integral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_below="@+id/tv_pb_discounted_prices"
+            android:textColor="@color/color64"
+            android:layout_marginTop="3dip"
+            android:textSize="@dimen/text_12sp"
+            android:text="@string/tv178"
+            android:visibility="gone" />
+        <TextView
+            android:id="@+id/tv_sold_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_pb_original_integral"
+            android:textSize="@dimen/text_12sp"
+            android:layout_marginTop="3dip"
+            android:textColor="@color/tabwd" />
+        <ImageView
+            android:id="@+id/iv_add_goods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/pb_add"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color39"
+    android:orientation="vertical"
+    tools:context=".module.ui.users.UserWalletRechargeActivity">
+
+    <View
+        android:id="@+id/status_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_statue_height"
+        android:background="@color/white" />
+
+    <include layout="@layout/layout_toolbar" />
+
+    <ViewStub
+        android:id="@+id/vs_showerror"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/layout_empty" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:layout_marginTop="20dip"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dip"
+            android:text="@string/tv1651"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv69"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_30sp" />
+
+            <EditText
+                android:id="@+id/et_uw_recharge_money"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dip"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/text_16sp"
+                android:background="@null"
+                android:inputType="numberDecimal"
+                android:lines="1"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dip"
+            android:background="@color/color40"></View>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tv1661"
+            android:textSize="@dimen/text_12sp"
+            android:visibility="gone"
+            android:layout_marginTop="15dip"
+            android:textColor="@color/tabwd"/>
+        <TextView
+            android:id="@+id/tv_pay_wx"
+            android:layout_width="match_parent"
+            android:layout_height="45dip"
+            android:layout_marginTop="40dip"
+            android:background="@drawable/bg_shape_pay_wx"
+            android:gravity="center"
+            android:text="@string/tv1671"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_16sp" />
+
+        <TextView
+            android:id="@+id/tv_pay_zfb"
+            android:layout_width="match_parent"
+            android:layout_height="45dip"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/bg_shape_pay_zfb"
+            android:gravity="center"
+            android:text="@string/tv1681"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_16sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dip"></View>
+    </LinearLayout>
+</LinearLayout>

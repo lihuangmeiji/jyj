@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".module.ui.account.LoginActivity">
+
+    <View
+        android:id="@+id/status_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_statue_height"
+        android:background="@color/white" />
+
+    <include layout="@layout/layout_toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:background="@drawable/bg_shape_ellipse_gray"
+        android:gravity="center"
+        android:paddingLeft="20dip"
+        android:paddingRight="20dip">
+
+        <com.idougong.jyj.widget.ClearEditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:drawableLeft="@mipmap/ico_user_phone"
+            android:drawablePadding="10dip"
+            android:hint="@string/tv18"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="11"
+            android:textColor="@color/black"
+            android:textColorHint="@color/textProfileGray"
+            android:textSize="@dimen/text_16sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="10dip"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_shape_ellipse_gray"
+            android:gravity="center"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip">
+
+            <com.idougong.jyj.widget.ClearEditText
+                android:id="@+id/et_code_show"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawableLeft="@mipmap/ico_user_pwd"
+                android:drawablePadding="10dip"
+                android:hint="@string/tv8"
+                android:imeOptions="actionDone"
+                android:lines="1"
+                android:textColor="@color/black"
+                android:textColorHint="@color/textProfileGray"
+                android:textSize="@dimen/text_16sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_get_code"
+            android:layout_width="90dip"
+            android:layout_height="35dip"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/bg_shape_register"
+            android:gravity="center"
+            android:text="@string/tv22"
+            android:textColor="@color/color37"
+            android:textSize="@dimen/text_14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_user_login"
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="15dip"
+        android:background="@drawable/selector_login"
+        android:gravity="center"
+        android:text="@string/tv29"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_16sp" />
+
+    <View
+        android:id="@+id/v_jptq"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"></View>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dip">
+
+        <CheckBox
+            android:id="@+id/cb_user_agreement"
+            style="@style/loginAgreementCheckboxTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false" />
+
+        <TextView
+            android:id="@+id/tv_user_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/cb_user_agreement"
+            android:textSize="@dimen/text_12sp" />
+    </RelativeLayout>
+</LinearLayout>

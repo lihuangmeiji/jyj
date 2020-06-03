@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_product_item"
+    android:layout_width="match_parent"
+    android:layout_height="90dip"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:padding="@dimen/padding_size_15">
+
+    <CheckBox
+        android:id="@+id/cb_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="15dip"
+        android:button="@drawable/vote_select1_selector" />
+
+    <RelativeLayout
+        android:id="@+id/rel_dzxx1"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_sh_name"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color35"
+            android:lines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/text_16sp" />
+
+        <TextView
+            android:id="@+id/tv_sh_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_toRightOf="@+id/tv_sh_name"
+            android:textColor="@color/color35"
+            android:maxLength="11"
+            android:textSize="@dimen/text_16sp" />
+
+        <TextView
+            android:id="@+id/tv_mr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_sh_phone"
+            android:background="@drawable/bg_shape_ellipse"
+            android:paddingBottom="3dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="3dip"
+            android:layout_marginLeft="15dip"
+            android:text="默认"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_10sp" />
+
+        <TextView
+            android:id="@+id/tv_sh_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_sh_name"
+            android:layout_marginTop="5dip"
+            android:textColor="@color/tabwd"
+            android:textSize="@dimen/text_12sp" />
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/iv_delivery_del"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/delivery_ads_del"/>
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.idougong.jyj.widget.ImageView_75_59
+        android:id="@+id/iv_banner_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@mipmap/bg_home_banner" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip">
+
+        <com.idougong.jyj.widget.Relativelayout_75_47
+            android:id="@+id/rel_banner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:banner_default_image="@mipmap/homebannermr"
+                app:indicator_drawable_selected="@drawable/bg_shape_banner_selected"
+                app:indicator_drawable_unselected="@drawable/bg_shape_banner_unselected" />
+        </com.idougong.jyj.widget.Relativelayout_75_47>
+
+        <com.idougong.jyj.widget.Relativelayout_345_69
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel_banner1"
+            android:layout_marginTop="35dip">
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:banner_default_image="@mipmap/homebannermr"
+                app:indicator_drawable_selected="@drawable/bg_shape_banner_selected"
+                app:indicator_drawable_unselected="@drawable/bg_shape_banner_unselected" />
+        </com.idougong.jyj.widget.Relativelayout_345_69>
+    </RelativeLayout>
+</RelativeLayout>

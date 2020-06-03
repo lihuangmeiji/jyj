@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color39"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".module.ui.users.UserWalletWithdrawalActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/status_bar_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_statue_height"
+                android:background="@color/white" />
+
+            <include layout="@layout/layout_toolbar" />
+
+            <ViewStub
+                android:id="@+id/vs_showerror"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/layout_empty" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dip"
+                android:background="@color/color39"></View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:background="@color/white"
+                android:paddingLeft="15dip"
+                android:paddingRight="15dip">
+
+                <TextView
+                    android:id="@+id/tv_zfb_account_bs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/tv1691"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_16sp" />
+
+                <EditText
+                    android:id="@+id/et_zfb_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@+id/tv_zfb_account_bs"
+                    android:background="@null"
+                    android:imeOptions="actionNext"
+                    android:lines="1"
+                    android:textColor="@color/textProfileGray"
+                    android:textColorHint="@color/textProfileGray"
+                    android:textSize="@dimen/text_16sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dip"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:background="@color/color40"></View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:background="@color/white"
+                android:paddingLeft="15dip"
+                android:paddingRight="15dip">
+
+                <TextView
+                    android:id="@+id/tv_zfb_name_bs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/tv1701"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_16sp" />
+
+                <TextView
+                    android:id="@+id/tv_zfb_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@+id/tv_zfb_name_bs"
+                    android:background="@null"
+                    android:imeOptions="actionNext"
+                    android:lines="1"
+                    android:textColor="@color/textProfileGray"
+                    android:textColorHint="@color/textProfileGray"
+                    android:textSize="@dimen/text_16sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dip"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:background="@color/color40"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dip"
+                android:paddingRight="15dip">
+
+                <TextView
+                    android:id="@+id/tv_zfb_code_bs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv1711"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_16sp" />
+
+                <EditText
+                    android:id="@+id/et_zfb_code"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@+id/tv_zfb_code_bs"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:textColor="@color/textProfileGray"
+                    android:textColorHint="@color/textProfileGray"
+                    android:textSize="@dimen/text_16sp" />
+
+                <TextView
+                    android:id="@+id/tv_uw_send_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dip"
+                    android:text="@string/tv1721"
+                    android:textColor="@color/color68"
+                    android:textSize="@dimen/text_12sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dip"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:background="@color/color40"></View>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dip"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dip"
+                android:text="@string/tv1651"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dip"
+                android:paddingRight="15dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv69"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_30sp" />
+
+                <EditText
+                    android:id="@+id/et_us_withdrawal_money"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dip"
+                    android:background="@null"
+                    android:inputType="numberDecimal"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_16sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dip"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:background="@color/color40"></View>
+
+            <TextView
+                android:id="@+id/tv_us_withdrawal_money"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:layout_marginTop="15dip"
+                />
+
+            <TextView
+                android:id="@+id/tv_us_withdrawal_apply_for"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:layout_marginTop="30dip"
+                android:background="@drawable/bg_shape_ellipse_gray"
+                android:gravity="center"
+                android:text="确认提现"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="25dip"></View>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

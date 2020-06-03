@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/lin_home_goods"
+    android:visibility="gone"
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dip"
+        android:background="@color/color39"></View>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dip"
+        android:paddingLeft="15dip"
+        android:layout_height="30dip">
+        <View
+            android:id="@+id/tv_stj_bs"
+            android:layout_width="4dip"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_blue_rectanglecircle"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/tv_stj_bs"
+            android:text="@string/tv36"
+            android:textColor="@color/color35"
+            android:layout_marginLeft="15dip"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_16sp"/>
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:id="@+id/post_list" />
+</LinearLayout>

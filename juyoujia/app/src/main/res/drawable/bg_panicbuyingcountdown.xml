@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#ffe63440" />
+    <item android:name="android:shadowDx">4</item>
+    <item android:name="android:shadowDy">3</item>
+    <item android:name="android:shadowColor">#45000000</item>
+    <stroke
+        android:width="3dp"
+        android:color="#59ffffff" />
+    <corners
+        android:bottomLeftRadius="30dp"
+        android:topLeftRadius="30dp" />
+</shape>

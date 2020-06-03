@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_species_name"
+        android:layout_width="match_parent"
+        android:layout_height="32dip"
+        android:textSize="@dimen/text_14sp"
+        android:paddingLeft="10dip"
+        android:background="#F0F5FF"
+        android:gravity="center_vertical"
+        android:textColor="@color/color37"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:paddingTop="5dip"
+        android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color39"
+    tools:context=".module.fragment.TabCategorizeThirdFragment">
+
+    <RelativeLayout
+        android:id="@+id/rel_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dip"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="@string/tv35"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_18sp" />
+        <TextView
+            android:id="@+id/tv_shopping_del"
+            android:layout_width="60dip"
+            android:layout_height="30dip"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dip"
+            android:background="@drawable/bg_shape_ellipse_shopdel"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/tv114"
+            android:textColor="@color/color37"
+            android:textSize="@dimen/text_12sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_shopping_car"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rel_title"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:scrollbars="none" />
+
+        <LinearLayout
+            android:id="@+id/lin_pay_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip">
+
+            <CheckBox
+                android:id="@+id/cb_all_shopping"
+                style="@style/shoppingSelectCheckboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:gravity="center"
+                android:text="全选"
+                android:textSize="@dimen/text_14sp" />
+
+            <RelativeLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/tv_pay_money_ts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="合计:"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/color70_sc"
+                    android:textSize="@dimen/text_14sp" />
+                <TextView
+                    android:id="@+id/tv_pay_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv103"
+                    android:layout_marginLeft="2dip"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_pay_money_ts"
+                    android:textColor="@color/color70_sc"
+                    android:textSize="@dimen/text_18sp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_order_place"
+                android:layout_width="100dip"
+                android:layout_height="30dip"
+                android:background="@drawable/bg_shape_ellipse_pink"
+                android:gravity="center"
+                android:text="结算"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/cl_shopping_car"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rel_title"
+        android:layout_marginTop="10dip"
+        android:fitsSystemWindows="true"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dip"
+            android:background="@color/white">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:contentScrim="@color/white"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_collapseMode="parallax"
+                    app:layout_collapseParallaxMultiplier="0.5">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="210dip"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/shopping_car_empty" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dip"
+                            android:text="@string/tv107"
+                            android:textColor="@color/tabwd"
+                            android:textSize="@dimen/text_14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_pay_goods"
+                            android:layout_width="120dip"
+                            android:layout_height="30dip"
+                            android:layout_marginTop="15dip"
+                            android:background="@drawable/bg_shape_ellipse_shopadd"
+                            android:gravity="center"
+                            android:text="@string/tv108"
+                            android:textColor="@color/color37"
+                            android:textSize="@dimen/text_12sp" />
+
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dip"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/color39"
+                        android:gravity="center"
+                        android:text="@string/tv39"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_16sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_shopping"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:scrollbars="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

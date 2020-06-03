@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dip"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.idougong.jyj.widget.ImageView_1_1
+            android:id="@+id/iv_ss_ico"
+            android:layout_width="80dip"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:src="@mipmap/shoppingmr" />
+
+        <TextView
+            android:id="@+id/tv_inventory"
+            android:layout_width="55dip"
+            android:layout_height="55dip"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_shape_cicle_sign1"
+            android:gravity="center"
+            android:text="已售罄"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_14sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dip"
+        android:layout_marginLeft="10dip">
+
+        <TextView
+            android:id="@+id/tv_ss_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textSize="@dimen/text_14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_ss_discounted_prices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color37"
+                android:textSize="@dimen/text_18sp" />
+
+            <TextView
+                android:id="@+id/tv_ss_original_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_toRightOf="@+id/tv_ce_point"
+                android:textColor="@color/color64"
+                android:textSize="@dimen/text_12sp"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></View>
+
+            <TextView
+                android:id="@+id/tv_increase_number"
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_marginLeft="5dip"
+                android:background="@mipmap/shopping_car_add"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

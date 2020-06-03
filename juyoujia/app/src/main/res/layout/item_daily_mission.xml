@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="5dip">
+
+    <ImageView
+        android:id="@+id/iv_dm_ico"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:src="@mipmap/userphotomr" />
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dip"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_dm_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color35"
+            android:textSize="@dimen/text_14sp" />
+
+        <TextView
+            android:id="@+id/tv_dm_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_dm_title"
+            android:textColor="@color/color3"
+            android:textSize="@dimen/text_12sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_dm_operation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_shape_daily_mission2"
+        android:paddingBottom="8dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="8dip"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_14sp" />
+</LinearLayout>

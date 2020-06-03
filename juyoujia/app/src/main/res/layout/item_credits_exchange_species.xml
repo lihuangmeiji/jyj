@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dip"
+    android:id="@+id/lin_ces_bg"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+    <com.idougong.jyj.widget.CircleImageView
+        android:id="@+id/iv_ces_ico"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:src="@mipmap/shoppingmr"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/tv_ces_bs"
+        android:layout_width="4dip"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:background="@drawable/bg_blue_rectanglecircle"/>
+    <TextView
+        android:id="@+id/tv_ces_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:ellipsize="end"
+        android:textSize="@dimen/text_14sp"
+        android:layout_marginLeft="10dip"
+        android:textColor="@color/black" />
+</LinearLayout>

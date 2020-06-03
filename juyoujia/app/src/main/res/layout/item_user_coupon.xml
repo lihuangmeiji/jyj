@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_couponitem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/bg_couponvalid"
+    android:gravity="center"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/tv_couponinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             />
+
+        <TextView
+            android:id="@+id/tv_cou_deception"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_couponinfo"
+            android:layout_marginTop="3dip"
+            android:background="@drawable/bg_shape_ellipse_yellowish"
+            android:paddingBottom="3dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="3dip"
+            android:textColor="@color/color78_sc"
+            android:textSize="@dimen/text_10sp" />
+
+        <TextView
+            android:id="@+id/tv_coupon_validperiod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dip"
+            android:layout_below="@+id/tv_cou_deception"
+            android:textSize="@dimen/text_12sp" />
+
+        <TextView
+            android:id="@+id/tv_coupon_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dip"
+            android:layout_below="@+id/tv_cou_deception"
+            android:textSize="@dimen/text_12sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_couponwithAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="20dip"
+        android:gravity="center"
+        android:textSize="@dimen/text_14sp" />
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin_item_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/yhj_bg_ky"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv_cou_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/color72_sc"
+            android:textSize="@dimen/text_16sp" />
+
+        <TextView
+            android:id="@+id/tv_cou_deception"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_cou_money"
+            android:layout_marginTop="3dip"
+            android:background="@drawable/bg_shape_ellipse_yellowish"
+            android:paddingBottom="3dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="3dip"
+            android:textColor="@color/color78_sc"
+            android:textSize="@dimen/text_10sp" />
+
+        <TextView
+            android:id="@+id/tv_cou_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_cou_deception"
+            android:layout_marginTop="3dip"
+            android:textColor="@color/color72_sc"
+            android:textSize="@dimen/text_12sp" />
+        <TextView
+            android:id="@+id/tv_cou_ts_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_cou_time"
+            android:layout_marginTop="3dip"
+            android:visibility="gone"
+            android:textSize="@dimen/text_12sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_cou_mj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color71_sc"
+        android:textSize="@dimen/text_12sp" />
+
+    <CheckBox
+        android:id="@+id/cb_cou_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginTop="5dip"
+        android:layout_marginRight="5dip"
+        android:button="@drawable/vote_select1_selector" />
+</LinearLayout>

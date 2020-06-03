@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/lin_item_pb"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:orientation="vertical"
+        android:background="@drawable/selector_pb_time"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/tv_pb_content1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_12sp"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/tv_pb_content2"
+            android:layout_width="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:textSize="@dimen/text_12sp"
+            android:textColor="@color/white" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv_item_pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/pb_time_bs"
+        android:layout_below="@+id/lin_item_pb"/>
+</RelativeLayout>

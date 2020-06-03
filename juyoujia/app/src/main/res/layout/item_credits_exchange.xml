@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_background_function"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="1dip"
+        android:paddingRight="1dip"
+        android:paddingTop="1dip">
+        <com.idougong.jyj.widget.RoundImageView
+            android:id="@+id/iv_ce_ico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/shoppingmr" />
+
+        <TextView
+            android:id="@+id/tv_inventory"
+            android:layout_width="55dip"
+            android:layout_height="55dip"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_shape_cicle_sign1"
+            android:gravity="center"
+            android:text="已售罄"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_14sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_ce_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="10dip"
+        android:ellipsize="end"
+        android:lines="1"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tv_ce_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color37"
+            android:textSize="@dimen/text_16sp" />
+
+        <TextView
+            android:id="@+id/tv_ce_original_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_marginTop="2dip"
+            android:textColor="@color/color64"
+            android:textSize="@dimen/text_11sp"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></View>
+
+        <TextView
+            android:id="@+id/tv_increase_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:background="@mipmap/shopping_car_add"
+            android:gravity="center"
+            android:textColor="@color/tabwd"
+            android:textSize="@dimen/text_12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_decrease_number"
+        android:layout_width="20dip"
+        android:layout_height="20dip"
+        android:background="@color/color13"
+        android:gravity="center"
+        android:text="-"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_so_number"
+        android:layout_width="25dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_14sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_ce_sold_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/color51"
+        android:textSize="@dimen/text_12sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_ce_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dip"
+        android:background="@drawable/bg_shape_item_ce1"
+        android:paddingBottom="3dip"
+        android:paddingLeft="6dip"
+        android:paddingRight="6dip"
+        android:paddingTop="3dip"
+        android:textColor="@color/color50"
+        android:textSize="@dimen/text_12sp"
+        android:visibility="gone" />
+</LinearLayout>

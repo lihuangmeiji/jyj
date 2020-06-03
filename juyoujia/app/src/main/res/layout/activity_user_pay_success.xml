@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color39"
+    android:orientation="vertical"
+    tools:context=".module.ui.users.UserPaySuccessActivity">
+
+    <View
+        android:id="@+id/status_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_statue_height"
+        android:background="@color/white" />
+
+    <include layout="@layout/layout_toolbar" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dip"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/avi_pay_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                android:layout_marginTop="15dip"
+                app:indicator="BallSpinFadeLoader"
+                app:indicator_color="@color/color37" />
+
+            <ImageView
+                android:id="@+id/iv_pay_ico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip"
+                android:visibility="gone"
+                android:src="@mipmap/paysuccess" />
+
+            <TextView
+                android:id="@+id/tv_pay_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv94"
+                android:textColor="@color/color35"
+                android:layout_marginTop="15dip"
+                android:textSize="@dimen/text_20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_pay_ts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_ts"
+                android:layout_marginTop="15dip"
+                android:gravity="center"
+                android:text="@string/tv118"
+                android:textColor="@color/tabwd"
+                android:textSize="@dimen/text_14sp" />
+
+            <TextView
+                android:id="@+id/tv_pay_again"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="50dip"
+                android:layout_marginRight="50dip"
+                android:layout_marginTop="30dip"
+                android:text="@string/tv119"
+                android:background="@drawable/bg_shape_ellipse"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_14sp" />
+
+            <TextView
+                android:id="@+id/tv_pay_order_look"
+                android:layout_width="match_parent"
+                android:layout_height="40dip"
+                android:layout_marginLeft="50dip"
+                android:layout_marginRight="50dip"
+                android:layout_marginTop="10dip"
+                android:gravity="center"
+                android:background="@drawable/bg_shape_ellipse_gray"
+                android:text="@string/tv120"
+                android:textColor="@color/color35"
+                android:textSize="@dimen/text_14sp"
+                 />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dip"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_afterpay_advertise"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

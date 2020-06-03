@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_product_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="@dimen/padding_size_10">
+
+    <com.idougong.jyj.widget.CircleImage2View
+        android:id="@+id/iv_invitation_ico"
+        android:layout_width="35dip"
+        android:layout_height="35dip"
+        android:src="@mipmap/userphotomr" />
+
+    <TextView
+        android:id="@+id/tv_invitation_phone"
+        android:layout_width="0dip"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:layout_marginLeft="10dip"
+        android:lines="1"
+        android:textColor="@color/color35"
+        android:textSize="@dimen/text_14sp" />
+
+    <TextView
+        android:id="@+id/tv_invitation_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/tabwd"
+        android:layout_marginLeft="10dip"
+        android:textSize="@dimen/text_12sp" />
+</LinearLayout>

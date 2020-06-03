@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/status_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_statue_height"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:visibility="invisible"
+            android:src="@mipmap/ic_return"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/bg_shoppingsearchview">
+
+
+            <com.idougong.jyj.widget.SearchEditText
+                android:id="@+id/et_shoppingsearch"
+                android:layout_width="match_parent"
+                android:background="@null"
+                android:layout_gravity="center_vertical"
+                android:hint="五花肉"
+                android:drawablePadding="10dip"
+                android:drawableLeft="@drawable/ic_bigshoppingsearch"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:singleLine="true"
+                android:imeOptions="actionSearch"
+                android:gravity="top"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_14sp"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_cancelsearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dip"
+            android:text="取消"/>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dip">
+        <TextView
+            android:id="@+id/tv_ongoingsearch"
+            android:layout_width="wrap_content"
+            android:text="@string/tv31"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_16sp"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/iv_del_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/record_del"/>
+    </RelativeLayout>
+
+    <ViewStub
+        android:id="@+id/vs_showerror"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/layout_empty" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_search_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dip">
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

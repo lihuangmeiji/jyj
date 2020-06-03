@@ -1,0 +1,735 @@
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        js调用java
+    </title>
+</head>
+<body>
+<div>
+    <input type="button" id="jsToJavaDefault" value="js发送给java默认接收" onclick="jsToJavaDefault();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="jsToJavaSpec" value="js发送给java指定接收" onclick="jsToJavaSpec();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeOpenWebview" value="webView页面打开" onclick="nativeOpenWebview();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeCloseWebview" value="关闭页面" onclick="nativeCloseWebview();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeShare" value="开始分享" onclick="nativeShare();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeWxPay" value="微信支付" onclick="nativeWxPay();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeAliPay" value="支付宝支付" onclick="nativeAliPay();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeOcrIDCard" value="OCR身份证识别" onclick="nativeOcrIDCard();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeLocation" value="获取定位信息" onclick="nativeLocation();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeTakePhoto" value="拍照" onclick="nativeTakePhoto();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeChooseAlbum" value="打开本地文件" onclick="nativeChooseAlbum();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeTakeVideo" value="拍视频" onclick="nativeTakeVideo();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeVersionCheck" value="版本检测" onclick="nativeVersionCheck();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeDeviceInfo" value="设备信息获取" onclick="nativeDeviceInfo();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeLogin" value="登录" onclick="nativeLogin();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeAppVersion" value="获取版本号" onclick="nativeAppVersion();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeCallPhone" value="拨打电话" onclick="nativeCallPhone();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeSendSms" value="发送短信" onclick="nativeSendSms();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeSetNavTitle" value="更改原生标题栏" onclick="nativeSetNavTitle();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeOpenPageWithScheme" value="scheme跳转" onclick="nativeOpenPageWithScheme();"
+/>
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeOpenPage" value="类名称跳转" onclick="nativeOpenPage();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeOpenBrowser" value="外部浏览器打开" onclick="nativeOpenBrowser();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeOpenApp" value="打开指定APP" onclick="nativeOpenApp();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeOpenAppstore" value="打开应用商城" onclick="nativeOpenAppstore();"
+    />
+</div>
+<br/>
+<div>
+    <input type="button" id="nativeOpenSetting" value="打开系统设置页面" onclick="nativeOpenSetting();"
+    />
+</div>
+<br/>
+<div id="show">打印信息</div>
+</body>
+
+<script>
+
+
+       //注册事件监听，初始化
+       function setupWebViewJavascriptBridge(callback) {
+           if (window.WebViewJavascriptBridge) {
+               callback(WebViewJavascriptBridge)
+           } else {
+               document.addEventListener(
+                   'WebViewJavascriptBridgeReady'
+                   , function() {
+                       callback(WebViewJavascriptBridge)
+                   },
+                   false
+               );
+           }
+       }
+       //回调函数，接收java发送来的数据
+       setupWebViewJavascriptBridge(function(bridge) {
+           //默认接收
+           bridge.init(function(message, responseCallback) {
+               document.getElementById("show").innerHTML = '默认接收到Java的数据： ' + message;
+
+               var responseData = 'js默认接收完毕，并回传数据给java';
+               responseCallback(responseData); //回传数据给java
+           });
+
+           //指定接收，参数functionInJs 与java保持一致 js方法名称
+           bridge.registerHandler("functionInJs", function(data, responseCallback) {
+               document.getElementById("show").innerHTML = '指定接收到Java的数据： ' + data;
+               var responseData = 'js指定接收完毕，并回传数据给java';
+               responseCallback(responseData); //回传数据给java
+           });
+
+            bridge.registerHandler("JSHNativeBack", function(data, responseCallback) {
+               document.getElementById("show").innerHTML = '指定接收到Java的数据： ' + data;
+               var responseData = 'js指定接收完毕，并回传数据给java';
+               responseCallback(responseData); //回传数据给java
+           });
+
+            bridge.registerHandler("JSHNativeShare", function(data, responseCallback) {
+               document.getElementById("show").innerHTML = '指定接收到Java的数据： ' + data;
+               var responseData = 'js指定接收完毕，并回传数据给java';
+               responseCallback(responseData); //回传数据给java
+           });
+
+            bridge.registerHandler("JSHNativeWxPay", function(data, responseCallback) {
+               document.getElementById("show").innerHTML = '指定接收到Java的数据： ' + data;
+               var responseData = 'js指定接收完毕，并回传数据给java';
+               responseCallback(responseData); //回传数据给java
+           });
+
+            bridge.registerHandler("JSHNativeAliPay", function(data, responseCallback) {
+               document.getElementById("show").innerHTML = '指定接收到Java的数据： ' + data;
+               var responseData = 'js指定接收完毕，并回传数据给java';
+               responseCallback(responseData); //回传数据给java
+           });
+
+            bridge.registerHandler("JSHNativeOcrIDCard", function(data, responseCallback) {
+               document.getElementById("show").innerHTML = '指定接收到Java的数据： ' + data;
+               var responseData = 'js指定接收完毕，并回传数据给java';
+               responseCallback(responseData); //回传数据给java
+           });
+
+            bridge.registerHandler("JSHNativeLocation", function(data, responseCallback) {
+               document.getElementById("show").innerHTML = '指定接收到Java的数据： ' + data;
+               var responseData = 'js指定接收完毕，并回传数据给java';
+               responseCallback(responseData); //回传数据给java
+           });
+
+            bridge.registerHandler("JSHNativeFilePath", function(data, responseCallback) {
+               document.getElementById("show").innerHTML = '指定接收到Java的数据： ' + data;
+               var responseData = 'js指定接收完毕，并回传数据给java';
+               responseCallback(responseData); //回传数据给java
+           });
+
+            bridge.registerHandler("JSHNativeDeviceInfo", function(data, responseCallback) {
+               document.getElementById("show").innerHTML = '指定接收到Java的数据： ' + data;
+               var responseData = 'js指定接收完毕，并回传数据给java';
+               responseCallback(responseData); //回传数据给java
+           });
+       })
+
+      //js传递数据给java
+    function jsToJavaDefault() {
+       var data = '发送数据给java默认接收';
+       window.WebViewJavascriptBridge.send(
+           data
+           , function(responseData) { //处理java回传的数据
+              document.getElementById("show").innerHTML = responseData;
+           }
+       );
+   }
+
+   function jsToJavaSpec() {
+       var data='发送数据给java指定接收';
+       window.WebViewJavascriptBridge.callHandler(
+           'jsToJavaSpec' ,
+           data,
+           function(responseData) { //处理java回传的数据
+              document.getElementById("show").innerHTML = responseData;
+           }
+       );
+   }
+
+
+
+   function nativeOpenWebview(){
+        var device = getDeviceType();
+        var data = "http://www.baidu.com";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeOpenWebview.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+              'nativeOpenWebview' ,
+              data,
+              function(responseData) { //处理java回传的数据
+              document.getElementById("show").innerHTML = responseData;
+            }
+           );
+        }
+    }
+
+
+
+
+   function nativeCloseWebview(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeCloseWebview.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeCloseWebview',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+function nativeShare(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeShare.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeShare',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+function nativeWxPay(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeWxPay.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeWxPay',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+function nativeAliPay(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeAliPay.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeAliPay',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+function nativeOcrIDCard(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeOcrIDCard.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeOcrIDCard',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+
+function nativeLocation(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeLocation.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeLocation',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+
+function nativeTakePhoto(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeTakePhoto.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeTakePhoto',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+
+
+function nativeChooseAlbum(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeChooseAlbum.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeChooseAlbum',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+
+
+
+function nativeTakeVideo(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeTakeVideo.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeTakeVideo',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+
+
+function nativeVersionCheck(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeVersionCheck.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeVersionCheck',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+
+
+function nativeDeviceInfo(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeDeviceInfo.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeDeviceInfo',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+
+function nativeLogin(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeLogin.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeLogin',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+function nativeAppVersion(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeAppVersion.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeAppVersion',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+function nativeCallPhone(){
+        var device = getDeviceType();
+        var data = "15888888888";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeCallPhone.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeCallPhone',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+
+function nativeSendSms(){
+        var device = getDeviceType();
+        var data = "15888888888";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeSendSms.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeSendSms',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+function nativeSetNavTitle(){
+        var device = getDeviceType();
+        var data = "修改标题栏";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeSetNavTitle.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeSetNavTitle',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+function nativeOpenPageWithScheme(){
+        var device = getDeviceType();
+        var data = "jyj://main/mine/wallet";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeOpenPageWithScheme.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeOpenPageWithScheme',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+function nativeOpenPage(){
+        var device = getDeviceType();
+        var data = "DeliveryAddressActivity";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeOpenPage.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeOpenPage',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+function nativeOpenBrowser(){
+        var device = getDeviceType();
+        var data = "http://www.baidu.com";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeOpenBrowser.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeOpenBrowser',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+function nativeOpenApp(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeOpenApp.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeOpenApp',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+function nativeOpenAppstore(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeOpenAppstore.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeOpenAppstore',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+function nativeOpenSetting(){
+        var device = getDeviceType();
+        var data = "";
+        if (device.isIOS) {
+            //nativeClosePage 与ios对应
+            window.webkit.messageHandlers.nativeOpenSetting.postMessage(data);
+        }
+        if (device.isAndroid) {
+            window.WebViewJavascriptBridge.callHandler(
+                'nativeOpenSetting',
+                data,
+                function (responseData) { //处理java回传的数据
+                  document.getElementById("show").innerHTML = responseData;
+                }
+            );
+        }
+    }
+
+
+   function getDeviceType() {
+    var type = window.navigator.userAgent.toLocaleLowerCase();
+    var isAndroid = /android/.test(type);
+    var isIOS = /iphone|ipad|ipod/.test(type);
+    return {
+        isAndroid: isAndroid,
+        isIOS: isIOS
+    }
+ }
+
+function JSHNativeBack(){
+alert('物理返回');
+}
+
+function JSHNativeShare(){
+alert('分享返回结果');
+}
+function JSHNativeWxPay(){
+alert('微信支付返回结果');
+}
+function JSHNativeAliPay(){
+alert('支付宝支付返回结果');
+}
+function JSHNativeOcrIDCard(){
+alert('ocr识别信息返回');
+}
+function JSHNativeLocation(){
+alert('定位信息返回');
+}
+function JSHNativeFilePath(){
+alert('拍照、相册获取、拍视频信息返回');
+}
+function JSHNativeDeviceInfo(){
+alert('设备信息返回');
+}
+
+</script>
+</html>

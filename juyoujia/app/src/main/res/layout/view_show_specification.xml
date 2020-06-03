@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/white_background_order"
+        android:orientation="vertical"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:paddingTop="5dip"
+        android:paddingBottom="5dip">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_code_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:textSize="@dimen/text_16sp" />
+
+            <ImageView
+                android:id="@+id/iv_show_spec_close"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:scaleType="center"
+                android:src="@mipmap/ercode" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dip"
+            android:gravity="center_vertical">
+            <ImageView
+                android:id="@+id/iv_sp_ico"
+                android:layout_width="80dip"
+                android:layout_height="match_parent"
+                android:src="@mipmap/shoppingmr"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dip">
+
+                <TextView
+                    android:id="@+id/tv_sp_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/text_16sp"
+                    android:textColor="@color/color35"/>
+                <TextView
+                    android:id="@+id/tv_sp_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_18sp"
+                    android:textColor="@color/color37"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="15dip"
+            android:background="@color/divide"></View>
+
+        <TextView
+            android:id="@+id/tv_specs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dip"
+            android:textSize="@dimen/text_12sp"
+            android:textColor="@color/color9"
+            android:text="商品规格"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_spec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            />
+        <View
+            android:id="@+id/v_specs"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="15dip"
+            android:background="@color/divide"></View>
+        <TextView
+            android:id="@+id/tv_handling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:textSize="@dimen/text_12sp"
+            android:textColor="@color/color9"
+            android:text="处理方式"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_handling"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            />
+        <TextView
+            android:id="@+id/tv_refunds_sub"
+            android:layout_width="match_parent"
+            android:layout_height="45dip"
+            android:layout_marginTop="15dip"
+            android:background="@drawable/bg_shape_ellipse"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_16sp" />
+    </LinearLayout>
+</RelativeLayout>

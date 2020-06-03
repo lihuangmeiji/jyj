@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color39"
+    tools:context=".module.ui.home.UserSignBoardActivity">
+
+    <View
+        android:id="@+id/status_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_statue_height"
+        android:background="@color/white" />
+
+    <include layout="@layout/layout_toolbar" />
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dip"
+                android:background="@color/color_sign1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/white_background_order">
+                    <com.idougong.jyj.widget.CircleImageView
+                        android:id="@+id/iv_userico"
+                        android:layout_width="55dip"
+                        android:layout_height="55dip"
+                        android:layout_marginLeft="20dip"
+                        android:src="@mipmap/user_icomr" />
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_user_sign_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_user_name"
+                            android:layout_marginTop="10dip"
+                            android:text="@string/tv178"
+                            android:textColor="@color/color_sign2"
+                            android:drawableLeft="@mipmap/sign_hb_bs"
+                            android:drawablePadding="5dip"
+                            android:textSize="@dimen/text_14sp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_user_sign_rules"
+                        android:layout_width="70dip"
+                        android:layout_height="30dip"
+                        android:text="@string/tv_sign1"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_12sp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/bg_user_info"/>
+                </LinearLayout>
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:orientation="vertical"
+                android:background="@drawable/white_background">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/sign_qd_bs"/>
+                <TextView
+                    android:id="@+id/tv_user_sign_reward"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dip"
+                    android:textSize="@dimen/text_16sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_jyj_sign_board"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip">
+                </android.support.v7.widget.RecyclerView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dip"
+                    android:textColor="@color/tabwd"
+                    android:textSize="@dimen/text_12sp"
+                    android:gravity="center"
+                    android:text="@string/tv_sign2" />
+
+                <TextView
+                    android:id="@+id/tv_user_sign_board"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dip"
+                    android:layout_marginLeft="45dip"
+                    android:layout_marginRight="45dip"
+                    android:background="@drawable/selector_sign"
+                    android:text="@string/tv98"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_14sp"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="20dip"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="10dip"
+                android:orientation="vertical"
+                android:background="@drawable/white_background">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dip"
+                    android:textSize="@dimen/text_16sp"
+                    android:textColor="@color/black"
+                    android:gravity="center_vertical"
+                    android:text="@string/tv_sign3"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dip"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_jyj_sign_task"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginRight="5dip">
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dip"></View>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

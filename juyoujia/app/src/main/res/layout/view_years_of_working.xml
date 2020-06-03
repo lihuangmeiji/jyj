@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_background_order"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dip"
+            android:padding="10dip">
+            <TextView
+                android:id="@+id/tv_yow_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/tv26"
+                android:textSize="@dimen/text_16sp"
+                android:textColor="@color/tabwd"
+                android:src="@mipmap/order_time_close" />
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/tv160"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_16sp" />
+
+            <TextView
+                android:id="@+id/tv_yow_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="@string/tv27"
+                android:textSize="@dimen/text_16sp"
+                android:textColor="@color/tabwd"
+                android:src="@mipmap/order_time_close" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.contrarywind.view.WheelView
+                android:id="@+id/wheelview"
+                android:layout_width="0dip"
+                android:layout_weight="1"
+                android:layout_height="120dip"
+                />
+            <com.contrarywind.view.WheelView
+                android:id="@+id/wheelview1"
+                android:layout_width="0dip"
+                android:layout_weight="1"
+                android:layout_height="120dip"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
